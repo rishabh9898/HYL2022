@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+
+     <title>Search Results</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+    <noscript
+      ><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}"
+    /></noscript>
+
+<body class="is-preload">
+    
+    <div id="wrapper">
+      <div id="bg"></div>
+      <div id="overlay"></div>
+      <div id="main">
+
+        <header id="header">
+          <a href="/"><h1>ResearchGram</h1></a>
+          <p>PDF &nbsp;&bull;&nbsp; JPEG/JPG/PNG &nbsp;&bull;&nbsp; MP4/MP3</p>
+          <br />
+
+          
+               <form action = "http://localhost:5000/results" method = "POST" 
+                  enctype = "multipart/form-data">
+                  <input type = "file" name = "file" />
+                  <input type = "submit"/>
+               </form>   
+</header>
+
+        <footer id="footer">
+          <span class="copyright"
+            >Void-21<a href=''></a
+          ></span>
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        document.body.classList.remove("is-preload");
+      };
+      window.ontouchmove = function () {
+        return false;
+      };
+      window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+      };
+    </script>
+  </body>
+
+</html>
