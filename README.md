@@ -19,8 +19,6 @@ inspect similar papers due to the inability of softwares like google scholar and
 process extremely inefficient.Adding to this, lack of access to university resources and libraries due to COVID-19 have amplified the existing 
 obstacles faced during research. These challenged paved way for our project.
 
-![image](https://user-images.githubusercontent.com/72998580/160287380-5979b249-58c6-42c9-b1af-6fbce3a08bf3.png)
-
 
 ## 4) Features :
 
@@ -35,6 +33,8 @@ obstacles faced during research. These challenged paved way for our project.
 • Generates top 3 recommendation of similar research papers.
 
 • Has a personalized dashboard for each member for them to come back and view their past work
+
+                        ![image](https://user-images.githubusercontent.com/72998580/160287380-5979b249-58c6-42c9-b1af-6fbce3a08bf3.png)
 
 
 ## 5) Types of inputs accepted : 
