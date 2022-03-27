@@ -34,7 +34,7 @@ obstacles faced during research. These challenged paved way for our project.
 
 • Has a personalized dashboard for each member for them to come back and view their past work
 
-                        ![image](https://user-images.githubusercontent.com/72998580/160287380-5979b249-58c6-42c9-b1af-6fbce3a08bf3.png)
+ ![image](https://user-images.githubusercontent.com/72998580/160287380-5979b249-58c6-42c9-b1af-6fbce3a08bf3.png)
 
 
 ## 5) Types of inputs accepted : 
