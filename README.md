@@ -19,7 +19,8 @@ inspect similar papers due to the inability of softwares like google scholar and
 process extremely inefficient.Adding to this, lack of access to university resources and libraries due to COVID-19 have amplified the existing 
 obstacles faced during research. These challenged paved way for our project.
 
-![image](https://user-images.githubusercontent.com/72998580/160287307-560e5fa4-b39f-4b54-9638-f34b2777af56.png)
+![image](https://user-images.githubusercontent.com/72998580/160287380-5979b249-58c6-42c9-b1af-6fbce3a08bf3.png)
+
 
 ## 4) Features :
 
