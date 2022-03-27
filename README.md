@@ -1,7 +1,7 @@
 # HYL2022
 Hackathon HYL 2022
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![MySQL](https://img.shields.io/badge/MySQL-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Flask](https://img.shields.io/badge/flask-3670A0?style=for-the-badge&logo=flask&logoColor=ffdd54)
 
@@ -21,11 +21,17 @@ obstacles faced during research. These challenged paved way for our project.
 
 ## 4) Features :
 
+• Allows input file in 3 formats i.e PDF, Video, Audio
+
+• Allows the input file to be in any language which can further be translated in english, french, spanish. 
+
 • Generates a textual summary of the input file provided by the user regardless of the format of submission(video/audio/image/PDF). 
 
-• Generates top 10 recommendation of similary papers.
+• Generates top 3 video recommendations based on the input
 
-• Generates summary of the top 3 matches research publications to facilitate effortless experience for user.
+• Generates top 3 recommendation of similar research papers.
+
+• Has a personalized dashboard for each member for them to come back and view their past work
 
 
 ## 5) Types of inputs accepted : 
@@ -47,17 +53,25 @@ obstacles faced during research. These challenged paved way for our project.
 ## 7) Technologies Used :
 
   • HTML5 •CSS3 •SCSS •Python 
-  • Flask •JS •JupyterNotebook
-  •PowerShell •React
+  • MySQL• Flask •JS •JupyterNotebook
+  •PowerShell 
 
 ## 8) API's used :
 
-  •Google Cloud Vision API
+  • Google Cloud Vision API
 
-  •IBM Watson Speech-to-Text API
+  • IBM Watson Speech-to-Text API
+  
+  • Youtube API v3
+  
+  • Google Translate API
+  
+  • BART-Large CNN model
+  
+  • MySQL
 
 ## 9) Machine Learning Models used :
 
-  •Bert-Extractive-Summarizer (Generates summary)
+  • BART- Large CNN model
 
   •Specter (Generates Embeddings)
