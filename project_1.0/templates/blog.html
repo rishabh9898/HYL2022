@@ -122,7 +122,9 @@
 	
 </div>	<div class="jumbotron jumbotron-single d-flex align-items-center" style="background-image: url(img/bg.jpg)">
   <div class="container text-center">
-    <h1 class="display-2 mb-4">Natural Language Processing</h1>
+    {% for i,k in wordTitle.items()%}
+    <h1 class="display-2 mb-4">{{k}}</h1>
+    {% endfor %}
   </div>
 </div>	<!-- Blog Section -->
 
@@ -131,16 +133,16 @@
     <div class="container">
         <div class="section-content">
             <div class = "myContainer">
-                <h2 class="section-title">Overview</h2>
+                
+                <h2 class="section-title">OverView</h2>
                 <br>
+                
                 </div>
             <div class="row">
                 <div class = "myContainer">
-                     <p> Coca-Cola, or Coke, is a carbonated soft drink manufactured by the Coca-Cola Company. Originally marketed as a temperance drink and intended as a patent medicine, it was invented in the late 19th century by John Stith Pemberton in Atlanta, Georgia. In 1888 Pemberton sold Coca-Cola's ownership rights to Asa Griggs Candler, a businessman, whose marketing tactics led Coca-Cola to its dominance of the global soft-drink market throughout the 20th and 21st century.[1] The drink's name refers to two of its original ingredients: coca leaves, and kola nuts (a source of caffeine). The current formula of Coca-Cola remains a closely guarded trade secret; however, a variety of reported recipes and experimental recreations have been published. The secrecy around the formula has been used by Coca-Cola in its marketing as only a handful of anonymous employees know the formula.[2] The drink has inspired imitators and created a whole classification of soft drink: colas.
-
-                        The Coca-Cola Company produces concentrate, which is then sold to licensed Coca-Cola bottlers throughout the world. The bottlers, who hold exclusive territory contracts with the company, produce the finished product in cans and bottles from the concentrate, in combination with filtered water and sweeteners. A typical 12-US-fluid-ounce (350 ml) can contains 38 grams (1.3 oz) of sugar (usually in the form of high-fructose corn syrup in North America). The bottlers then sell, distribute, and merchandise Coca-Cola to retail stores, restaurants, and vending machines throughout the world. The Coca-Cola Company also sells concentrate for soda fountains of major restaurants and foodservice distributors.
-                        
-                        The Coca-Cola Company has on occasion introduced other cola drinks under the Coke name. The most common of these is Diet Coke, along with others including Caffeine-Free Coca-Cola, Diet Coke Caffeine-Free, Coca-Cola Zero Sugar, Coca-Cola Cherry, Coca-Cola Vanilla, and special versions with lemon, lime, and coffee. Coca-Cola was called Coca-Cola Classic from July 1985 to 2009, to distinguish it from "New Coke". Based on Interbrand's "best global brand" study of 2020, Coca-Cola was the world's sixth most valuable brand.[3] In 2013, Coke products were sold in over 200 countries worldwide, with consumers drinking more than 1.8 billion company beverage servings each day.[4] Coca-Cola ranked No. 87 in the 2018 Fortune 500 list of the largest United States corporations by total revenue. </p>   
+                    {% for i,k in wordSummary.items()%}
+                     <p>{{k}} </p>
+                     {% endfor %}   
                 </div>
             </div>    
         </div>
@@ -161,29 +163,39 @@
                 <!-- Blog -->
                 <div class="col-md-12 blog-holder">
                     <div class="row">
+                        {% for i in range(length) %}
                         <!-- Blog Item -->
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="single.html"><iframe width="350" height="250" src="https://www.youtube.com/embed/5ctbvkAMQO4" frameborder="0"  allowfullscreen></iframe></a>
+                                    {% for i,k in url.items() %}
+                                    <a href="single.html"><iframe width="350" height="250" src={{k}} frameborder="0"  allowfullscreen></iframe></a>
+                                    {%endfor%}
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
                                         <a href="#"><h6><small>CODE</small></h6></a>
                                     </div>
                                     <div class="blog-title">
-                                        <a href="single.html"><h4>Natural Language Processing</h4></a>
+                                        {% for i,k in wordTitle.items()%}
+                                        <a href="single.html"><h4>{{k}}</h4></a>
+                                        {% endfor %}
                                     </div>
                                     <div class="blog-meta">
-                                        <p class="blog-date">30 May 2016</p> /
+                                        {% for i,k in publishTime.items() %}
+                                        <p class="blog-date">{{k}}</p> /
                                         <p class="blog-comment"><a href="">23 Comments</a></p>
+                                        {% endfor %}
                                     </div>
                                     <div class="blog-desc">
-                                        <p>** Natural Language Processing Using Python: https://www.edureka.co/python-natural... **
-                                            This Edureka video will provide you with a short and crisp description of NLP (Natural Language Processing) and Text Mining. You will also learn about the various applications of NLP in the industry.</p>
+                                        {% for i,k in title.items() %}
+                                        <p>{{k}}</p>
+                                        {% endfor %}
                                     </div>
                                     <div class="blog-author">
-                                        <p>by Ederuka</p>
+                                        {% for i,k in channel.items() %}
+                                        <p>{{k}}</p>
+                                        {% endfor %}
                                     </div>
                                     <div class="blog-share-wrapper">
                                         <a class="blog-share" href="google.com">
@@ -195,82 +207,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- End of Blog Item -->
-                        <!-- Blog Item -->
-                        <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <a href="single.html"><iframe width="350" height="250" src="https://www.youtube.com/embed/5ctbvkAMQO4" frameborder="0"  allowfullscreen></iframe></a>
-                                </div>
-                                <div class="blog-text">
-                                    <div class="blog-tag">
-                                        <a href="#"><h6><small>CODE</small></h6></a>
-                                    </div>
-                                    <div class="blog-title">
-                                        <a href="single.html"><h4>Natural Language Processing</h4></a>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <p class="blog-date">30 May 2016</p> /
-                                        <p class="blog-comment"><a href="">23 Comments</a></p>
-                                    </div>
-                                    <div class="blog-desc">
-                                        <p>** Natural Language Processing Using Python: https://www.edureka.co/python-natural... **
-                                            This Edureka video will provide you with a short and crisp description of NLP (Natural Language Processing) and Text Mining. You will also learn about the various applications of NLP in the industry.</p>
-                                    </div>
-                                    <div class="blog-author">
-                                        <p>by Ederuka</p>
-                                    </div>
-                                    <div class="blog-share-wrapper">
-                                        <a class="blog-share" href="google.com">
-                                            <i class="fab fa-facebook-square"></i>
-                                        </a>
-                                        <a class="blog-share" href="google.com">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Blog Item -->
-                        <!-- Blog Item -->
-                        <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <a href="single.html"><iframe width="350" height="250" src="https://www.youtube.com/embed/5ctbvkAMQO4" frameborder="0"  allowfullscreen></iframe></a>
-                                </div>
-                                <div class="blog-text">
-                                    <div class="blog-tag">
-                                        <a href="#"><h6><small>CODE</small></h6></a>
-                                    </div>
-                                    <div class="blog-title">
-                                        <a href="single.html"><h4>Natural Language Processing</h4></a>
-                                    </div>
-                                    <div class="blog-meta">
-                                        <p class="blog-date">30 May 2016</p> /
-                                        <p class="blog-comment"><a href="">23 Comments</a></p>
-                                    </div>
-                                    <div class="blog-desc">
-                                        <p>** Natural Language Processing Using Python: https://www.edureka.co/python-natural... **
-                                            This Edureka video will provide you with a short and crisp description of NLP (Natural Language Processing) and Text Mining. You will also learn about the various applications of NLP in the industry.</p>
-                                    </div>
-                                    <div class="blog-author">
-                                        <p>by Ederuka</p>
-                                    </div>
-                                    <div class="blog-share-wrapper">
-                                        <a class="blog-share" href="google.com">
-                                            <i class="fab fa-facebook-square"></i>
-                                        </a>
-                                        <a class="blog-share" href="google.com">
-                                            <i class="fab fa-twitter-square"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Blog Item -->
-                        
+                        </div>                       
                     </div>
+                    {% endfor %}
                 </div>
                 <!-- End of Blog -->
             </div>

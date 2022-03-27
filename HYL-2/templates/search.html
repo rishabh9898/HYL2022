@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/main.css')}}">
-    <noscript><link rel="stylesheet" href="searchassets/css/noscript.css"
+    <noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}"
     /></noscript>
   </head>
   <body class="is-preload">
@@ -19,69 +19,42 @@
       <div id="main">
         <!-- Header -->
 
-        <script src="/ResearchGram/search.js"></script>
+        <!-- <script src="/ResearchGram/search.js"></script> -->
 
         <header id="header">
-          <a href="index.html"><h1>ResearchGram</h1></a>
-          <p>PDF &nbsp;&bull;&nbsp; JPG/PNG &nbsp;&bull;&nbsp; MP4</p>
+          <a href="/"><h1>ResearchGram</h1></a>
+          <p>PDF &nbsp;&bull;&nbsp; JPEG/JPG/PNG &nbsp;&bull;&nbsp; MP4/MP3</p>
           <br />
 
-          <input type="file" id="real-file" hidden="hidden" />
-          <button type="button" id="custom-button">CHOOSE A FILE</button>
-          <span id="custom-text">No file chosen, yet.</span>
-		  <script>
-			const realFileBtn = document.getElementById("real-file");
-			const customBtn = document.getElementById("custom-button");
-			const customTxt = document.getElementById("custom-text");
-	  
-			customBtn.addEventListener("click", function () {
-			  realFileBtn.click();
-			});
-	  
-			realFileBtn.addEventListener("change", function () {
-			  if (realFileBtn.value) {
-				customTxt.innerHTML = realFileBtn.value.match(
-				  /[\/\\]([\w\d\s\.\-\(\)]+)$/
-				)[1];
-			  } else {
-				customTxt.innerHTML = "No file chosen, yet.";
-			  }
-			});
-		  </script>
-		  
-          <form action="">
-            <label class="field field_v1">
-              <input class="field__input" placeholder="Example : Cancer" />
-              <span class="field__label-wrap">
-                <span class="field__label"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter
-                  Query</span
-                >
-              </span>
-            </label>
-            <a href="#" class="bn3">Submit</a>
-
-          </form>
+          
+               <form action = "http://localhost:5000/results" method = "POST" 
+                  enctype = "multipart/form-data">
+                  <input type = "file" name = "file" />
+                  <!-- <input type = "submit"/> -->
+                  <button type = "submit" , class = "bn3" , name = "Text">SUBMIT</button>
+               </form>   
         </header>
-
-        <!-- Footer -->
-        <footer id="footer">
-          <span class="copyright"
-            >Void-21<a href="http://html5up.net"></a
-          ></span>
-        </footer>
+          <!-- <input type="file" id="real-file" hidden="hidden" />
+          <button type="button" id="custom-button">CHOOSE A FILE</button>
+          <span id="custom-text">No file chosen, yet.</span> -->
+          <footer id="footer">
+            <span class="copyright"
+              >Void-21<a href=''></a
+            ></span>
+          </footer>
+        </div>
       </div>
-    </div>
-    <script>
-      window.onload = function () {
-        document.body.classList.remove("is-preload");
-      };
-      window.ontouchmove = function () {
-        return false;
-      };
-      window.onorientationchange = function () {
-        document.body.scrollTop = 0;
-      };
-    </script>
-  </body>
-</html>
+      <script>
+        window.onload = function () {
+          document.body.classList.remove("is-preload");
+        };
+        window.ontouchmove = function () {
+          return false;
+        };
+        window.onorientationchange = function () {
+          document.body.scrollTop = 0;
+        };
+      </script>
+    </body>
+  
+  </html>
