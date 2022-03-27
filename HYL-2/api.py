@@ -256,7 +256,7 @@ def signin():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    cur = mysql.connection.cursor()
+    """cur = mysql.connection.cursor()
     result = cur.execute("Select * FROM USERCREDENTIALS")
 
     if(result>0):
@@ -266,7 +266,7 @@ def signin():
             if(user[1]==email and user[2]==password):
                 print("user is " +str(user[0]))
                 result = {'username': user[0], "email":user[1], "password":user[2]}
-                return jsonify(result), 200
+                return jsonify(result), 200"""
 
     return render_template('index.html')
    
