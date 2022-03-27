@@ -7,7 +7,7 @@ Hackathon HYL 2022
 
 ## 1) What is ScholarED?
 
-ScholarED is an AI based tool that leverages Machine Learning, NLP and cloud computing 
+is an AI based tool that leverages Machine Learning, NLP and cloud computing 
 to generate research paper recommendations from over 500,000+ research papers in our dataset (subset from the Arxiv dataset)
 based on the input provided by the user (input can be provided in various image,video,audio and document formats).
 
