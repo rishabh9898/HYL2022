@@ -7,6 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/main.css')}}">
     <noscript><link rel="stylesheet" href="{{url_for('static', filename = 'css/noscript.css')}}"
     /></noscript>
@@ -22,24 +24,66 @@
         <!-- <script src="/ResearchGram/search.js"></script> -->
 
         <header id="header">
-          <a href="/"><h1>ResearchGram</h1></a>
+          <a href="/"><h1>ScholarEd</h1></a>
           <p>PDF &nbsp;&bull;&nbsp; JPEG/JPG/PNG &nbsp;&bull;&nbsp; MP4/MP3</p>
-          <br />
+          <br><br>
+         
 
           
                <form action = "http://localhost:5000/results" method = "POST" 
                   enctype = "multipart/form-data">
-                  <input type = "file" name = "file" />
+
+                <label class="btn btn-primary btn-file" name = "file" id="read-file">
+                   UPLOAD FILE TO GET STUDY RESOURCES<input type="file" name="file">
+                </label>
+
+
+                   <br><br>
+<!--                  <input type = "file" name = "file"  />-->
                   <!-- <input type = "submit"/> -->
-                  <button type = "submit" , class = "bn3" , name = "Text">SUBMIT</button>
-               </form>   
+
+                <div class="example">
+                  <label class="radio-button">
+                    <input type="radio" class="radio-button__input" id="choice1-1" name="choice1">
+                    <span class="radio-button__control"></span>
+                    <span class="radio-button__label">Youtube Reccomendations</span>
+                  </label>
+                  <label class="radio-button">
+                    <input type="radio" class="radio-button__input" id="choice1-2" name="choice2">
+                    <span class="radio-button__control"></span>
+                    <span class="radio-button__label">Educational Resources</span>
+                  </label>
+                  <label class="radio-button">
+                    <input type="radio" class="radio-button__input" id="choice1-3" name="choice3">
+                    <span class="radio-button__control"></span>
+                    <span class="radio-button__label">Save Results to My Portal</span>
+                  </label>
+                </div>
+          
+
+            <br>
+
+      <select name="languages" id="lang">
+            <option value="Select" style="background: grey; color: white; border-radius:30px;">SELECT TRANSLATION LANGUAGE</option>
+            <option value="English" style="background: grey; color: white; text-align: center;">English</option>
+            <option value="English" style="background: grey; color: white; text-align: center;">English</option>
+            <option value="English" style="background: grey; color: white; text-align: center;">English</option>
+      </select>
+      <br>
+
+                 <button type = "submit" , class = "bn3" , name = "Text">SUBMIT</button>
+                    <br>
+
+                  </br>
+               </form>
+
         </header>
           <!-- <input type="file" id="real-file" hidden="hidden" />
           <button type="button" id="custom-button">CHOOSE A FILE</button>
           <span id="custom-text">No file chosen, yet.</span> -->
           <footer id="footer">
             <span class="copyright"
-              >Void-21<a href=''></a
+              ><a href=''></a
             ></span>
           </footer>
         </div>

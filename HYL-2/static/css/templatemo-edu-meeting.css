@@ -244,7 +244,7 @@ header
 }
 
 .background-header {
-  background-color: #fff!important;
+  background-color: transparent!important;
   height: 80px!important;
   position: fixed!important;
   top: 0!important;
@@ -254,12 +254,12 @@ header
 }
 
 .background-header .main-nav .nav li a {
-  color: #1e1e1e!important;
+  color: white!important;
 }
 
 .background-header .logo,
 .background-header .main-nav .nav li a {
-  color: #1e1e1e!important;
+  color: white !important;
 }
 
 .background-header .main-nav .nav li:hover a {
@@ -1454,7 +1454,7 @@ heading page
 */
 
 section.heading-page {
-  background-image: url(../img/heading-bg.jpg);
+  background-image: url(../img/study.gif);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1465,21 +1465,24 @@ section.heading-page {
 
 section.heading-page h6 {
   margin-top: 0px;
-  font-size: 15px;
+  font-size: 30px;
   text-transform: uppercase;
   font-weight: 600;
   color: #fff;
   letter-spacing: 1px;
+  -webkit-text-stroke: 2px black;
+  
 }
 
 section.heading-page h2 {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 50px;
   text-transform: uppercase;
   font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
+  -webkit-text-stroke: 2px black;
 }
 
 

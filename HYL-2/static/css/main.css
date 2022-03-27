@@ -226,7 +226,8 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.jpg") bottom left;
+		
+	background: #348cb2 url("img/bg.jpg") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -352,7 +353,7 @@ input, select, textarea {
 		-ms-animation: overlay 1.5s 1.5s forwards;
 		animation: overlay 1.5s 1.5s forwards;
 		background-attachment: fixed, fixed;
-		background-image: url("images/overlay-pattern.png"), url("images/overlay.svg");
+		background-image: url("img/overlay-pattern.png"), url("img/overlay.svg");
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -1281,11 +1282,11 @@ FIELD
 
   form {
 	position: relative;
-	width: 250px;
+	width: 800px;
 	margin: 0 auto;
 	background: rgba(255, 255, 255, 0.3);
 	background-color: transparent;
-	padding: 20px 22px;
+	padding: 0px 22px;
 	border: 1px solid;
 	border-top-color: transparent;
 	border-left-color: transparent;
@@ -1348,4 +1349,147 @@ FIELD
   .bn3:hover {
 	color: black;
 	background-color: rgb(255, 255, 255);
+  }
+  html {
+  font-family: Arial;
+}
+
+
+.radio-button {
+  cursor: pointer;
+  padding-right: 29px;
+  overflow: hidden;
+    white-space: nowrap;
+}
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 11px 23px;
+    border: 0px solid rgba(0,0,0,.15);
+    border-radius: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.radio-button__input {
+    opacity: 0;
+    position: absolute;
+}
+
+.radio-button__control {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    vertical-align: middle;
+    background-color: inherit;
+    color: black;
+    border: 4px solid black;
+    border-radius: 24px;
+}
+
+.radio-button__input:checked+.radio-button__control:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 2.5px;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 12px;
+}
+
+.radio-button__input:checked+.radio-button__control {
+    border-color: white;
+}
+
+.radio-button__control {
+  transform: scale(0.75);
+}
+
+.btn-file {
+  font-size: 25px;
+
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  color: white;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+ body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
+     height: 100vh;
+     background-color: #f1f1f1;
+   }
+
+input {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
+   }
+
+label {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
+	 
+   }
+
+select {
+	font-size: 20px;
+	background-color: #0000;
+	border-color: rgb(24, 21, 21);
+	border-width: 3.5px;
+	padding:15px;
+  border-radius:33px;
+  box-shadow: 3px 7px rgb(24, 21, 21);
+  
+   }
+
+
+a:hover{
+	color: #fff;
+	text-decoration: none
+}
+
+.btn-primary
+{
+	font-size: 22px;
+	background-color: #0000;
+	border-color: rgb(24, 21, 21);
+	border-width: 3.5px;
+	padding:15px;
+  border-radius:30px;
+  box-shadow: 3px 7px rgb(24, 21, 21);
+
+}
+
+.options {
+	border: 1px solid #e5e5e5;
+	padding: 10px;
   }

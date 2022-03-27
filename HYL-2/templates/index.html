@@ -37,6 +37,23 @@
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
 	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
+
+        <div id="side-nav" class="sidenav">
+            <a href="javascript:void(0)" id="side-nav-close">&times;</a>
+            
+            <div class="sidenav-content">
+                <br><br><br><br>
+                <p>Hello Sarthak!</p>
+                <p><img src="/static/img/sarthak.jpg" class="user"> </p>
+                <p>
+                    Sarthak Sharan 
+                </p>
+                <p>
+                    <span class="fs-16 primary-color">sarthak@gmail.com</span>
+                </p>
+                <p></p>
+            </div>
+        </div>
     <div class="container">
         <a class="navbar-brand d-flex align-items-center text-white" href="/">
             <h3 class="font-weight-bolder mb-0">ScholarEd</h3>
@@ -53,7 +70,12 @@
                     <a class="nav-link" href="blog">Analytics</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Sign Up</a>
+                    <a class="nav-link" href="login">Sign Out</a>
+                </li>
+                <li class="nav-item only-desktop">
+                    <a class="nav-link" id="side-nav-open" href="#">
+                        <span class="lnr lnr-menu"></span>
+                    </a>
                 </li>
 
                 <!-- <li class="nav-item">
@@ -111,14 +133,14 @@
                                 <div class="my-4">
                                     <i class="lnr lnr-cog fs-40"></i>
                                 </div>
-                                <h4>Generate App Analytics</h4>
-                                <p>Applytics provides you with qualitative statistical information for all your faviroute apps</p>
+                                <h4>Provides Video Study Material</h4>
+                                <p>Our App uses Youtube API to provide you with videos relevant to your inputed resource to help you ace your academics! </p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
                                     <i class="lnr lnr-frame-contract fs-40"></i>
                                 </div>
-                                <h4>Reviews Analyzer</h4>
+                                <h4>Provides Scientific Literature</h4>
                                 <p>Provides list of customer complaints on major bugs identified by Applytics for in-dept qualitative analysis by developers</p>
                             </div>
                         </div>
@@ -127,16 +149,16 @@
                         <div class="col-md-4 col-sm-12 text-center">
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
-                                    <i class="lnr lnr-bubble fs-40"></i>
+                                    <i class="lnr lnr-clock fs-40"></i>
                                 </div>
-                                <h4>Analytics Visualization</h4>
+                                <h4>Summarizes large educational content</h4>
                                 <p>Applytics provides you with pie-charts, bargraphs and histograms to visualize the development status of the requested application</p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
                                 <div class="my-4">
                                     <i class="lnr lnr-magic-wand fs-40"></i>
                                 </div>
-                                <h4>Developer Portal</h4>
+                                <h4>Support over 20+ languages</h4>
                                 <p>Applytics provides a developer portal to track all the existing bugs with their application and in-dept app statistics for qualitative analysis</p>
                             </div>
                         </div>
@@ -147,7 +169,7 @@
                                 <div class="my-4">
                                     <i class="lnr lnr-clock fs-40"></i>
                                 </div>
-                                <h4>Bug Tracker</h4>
+                                <h4>Personal Study Portal</h4>
                                 <p>Tracks the status of the bugs identified by the App users with regards to the efforts put by the developers to resolve them</p>
                             </div>
                             <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
@@ -167,7 +189,7 @@
     </div>
 </section>
 
-<!-- End of Features Section-->	<section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(/static/img/bg.jpg);">
+<!-- End of Features Section-->	<section id="section-featurettes" class="featurettes overlay bg-fixed" style="background-image: url(/static/img/meetings-bg.jpg);">
 
 
     <div class="container">
@@ -177,9 +199,9 @@
                     <div class="row align-items-center text-white">
 
                         <div class="col-md-4 offset-right-8 col-sm-3" data-aos="fade-right">
-                            <h4 class="mb-2">Search New Content</h4>
-                            <p>Signing up for a General account will enable you to generate and visualize the analytics for your faviroute applications. Most importantly, it will allow you to assess the response of the App's developers towards their customers feedback.</p>
-                            <button type="button" class="btn btn-outline-primary" onclick="location.href='login'">Try Now!</button>
+                            <h4 class="mb-2">SEARCH NEW CONTENT</h4>
+                            <p>View all stored resources on your personal dashboard to organize your</p>
+                            <button type="button" class="btn btn-outline-primary" onclick="location.href='portalResult'">Try Now!</button>
                         </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
 
                         <div class="col123">
@@ -213,13 +235,13 @@
                     <div class="row align-items-center">
 
                         
-                        <img class="my-5" src="/static/img/dev2.png" alt=""  >
+                        <img class="my-5" src="/static/img/dev4.png" alt=""  >
 
                         <div class="col-md-4 offset-md-right-2 col-sm-6" data-aos="fade-left">
                             
-                            <h4 class="mb-4">View your portal</h4>
-                            <p><b>Signing up for a Developer account will enable you to view the analytics for your application. Most importantly, it will provide you with numerous bug identification and tracking features like Advanced Customer Reviews Analyzer, Bug Tracker, Patch Notes Mapper and much more...</b></p>
-                            <button type="button" class="btn btn-outline-primary1"  onclick="location.href='login'">Try Now!</button>
+                            <h4 class="mb-4">SEARCH NEW CONTENT</h4>
+                            <p><b>Find Relevant Educational material relevant to your class notes, lecture videos and class recordings</b></p>
+                            <button type="button" class="btn btn-outline-primary1"  onclick="location.href='search'">Try Now!</button>
                         </div><!--/ .col-md-4.col-md-offset-2.col-sm-6 -->
 
                     </div><!--/ .featurettes-item -->
@@ -341,28 +363,10 @@
          		
          	</div>
          	<div class="col-lg-4 col-md-12 d-flex align-items-center">
-         		<p class="mx-auto text-center mb-0">SENG-401 Final Project </p>
+         		<p class="mx-auto text-center mb-0">HYL Hacks 2</p>
          	</div>
            
-            <div class="col-lg-4 col-md-12">
-            	<nav class="nav nav-mastfoot justify-content-center">
-	                <a class="nav-link" href="#">
-	                	<i class="fab fa-facebook-f"></i>
-	                </a>
-	                <a class="nav-link" href="#">
-	                	<i class="fab fa-twitter"></i>
-	                </a>
-	                <a class="nav-link" href="#">
-	                	<i class="fab fa-instagram"></i>
-	                </a>
-	                <a class="nav-link" href="#">
-	                	<i class="fab fa-linkedin"></i>
-	                </a>
-	                <a class="nav-link" href="#">
-	                	<i class="fab fa-youtube"></i>
-	                </a>
-	            </nav>
-            </div>
+            
             
         </div>
     </div>

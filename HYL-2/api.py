@@ -18,9 +18,9 @@ from googleapiclient.discovery import build
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'studdybuddy'
+app.config['MYSQL_USER'] = 'hyl'
+app.config['MYSQL_PASSWORD'] = 'ensf'
+app.config['MYSQL_DB'] = 'hyl'
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
 API_TOKEN = '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'
 
@@ -30,6 +30,32 @@ CORS(app)
 mysql = MySQL(app)
 
 titleGiven = ""
+
+
+def translate_text(target, text):
+    """Translates text into the target language.
+
+    Target must be an ISO 639-1 language code.
+    See https://g.co/cloud/translate/v2/translate-reference#supported_languages
+    """
+    import six
+    from google.cloud import translate_v2 as translate
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "ace-axon-345319-2f552f217e48.json"
+
+    translate_client = translate.Client()
+
+    if isinstance(text, six.binary_type):
+        text = text.decode("utf-8")
+
+    # Text can also be a sequence of strings, in which case this method
+    # will return a sequence of results for each text.
+    result = translate_client.translate(text, target_language=target)
+
+    # outputText.append(u"Text: {}".format(result["input"]))
+    return result["translatedText"]
+    # outputText.append(u"Detected source language: {}".format(result["detectedSourceLanguage"]))
+
 def query(payload):
     data = json.dumps(payload)
     response = requests.request("POST", API_URL, headers=headers, data=data)
@@ -47,8 +73,8 @@ def preprocess (text):
   return text
 
 def youtube(query):
-    # api_key = "AIzaSyDWWErzd2qUj0uh-N7123d7hvuQkKjMGh4"
-    api_key = "AIzaSyDhs3vS_OwXut_S2AxXE1AOYid9Emd3iSo"
+    api_key = "AIzaSyCbytQjVzusnCgZcJz8g2Dph99m07xoh_M"
+    # api_key = "AIzaSyDhs3vS_OwXut_S2AxXE1AOYid9Emd3iSo"
     youtube = build('youtube', 'v3', developerKey=api_key)
     type(youtube)
     req = youtube.search().list(q=query, part='snippet')
@@ -86,8 +112,13 @@ def home():
 def login():
     return render_template('login.html')
 
+
+
+
 @app.route('/results', methods = ['GET', 'POST'])
 def results():
+
+
     if request.method == 'POST':
       f = request.files['file']
       fileType = f.filename.rsplit('.', 1)[1].lower()
@@ -102,26 +133,19 @@ def results():
       text = preprocess(text)
       print(num_pages)
       print(text)
+
+    outputText = translate_text("en", text)
     #   return 'file uploaded successfully'
     titleGiven = query({
-                    "inputs":text, "parameters": {"do_sample": False ,"min_length":5 ,"max_length": 10},
+                    "inputs":outputText, "parameters": {"do_sample": False ,"min_length":5 ,"max_length": 6},
                 })
 
     
 
 
     summaryGiven = query({
-                    "inputs":text, "parameters": {"do_sample": False ,"min_length":250 ,"max_length": 300},
+                    "inputs":outputText, "parameters": {"do_sample": False ,"min_length":250 ,"max_length": 300},
                 })
-
-    # cur0 = mysql.connection.cursor()
-    # mysql.connection.commit()
-    # cur0.close()
-
-    # cur = mysql.connection.cursor()
-    # cur.execute("""UPDATE USERCREDENTIALS SET Queries = %s WHERE username = %s""", (titleGiven['summary_text'],""))
-    # mysql.connection.commit()
-    # cur.close()
 
     wordSummary = {}
     wordSummary['summary'] = summaryGiven[0]['summary_text']
@@ -129,7 +153,7 @@ def results():
     wordTitle['title'] = titleGiven[0]['summary_text']
 
     res = youtube(titleGiven)
-    size = len(res)
+    # size = len(res)
 
     url = []
     abstract = []
@@ -147,6 +171,31 @@ def results():
          publishTime.append(match.group(1))
          channel.append(res[i]['channelname'])
     # return url[0]
+    num = "2"
+    cur = mysql.connection.cursor()
+    result = cur.execute("""select url, title, abstract
+    from summary AS S, resources AS R
+    where summaryID = rsummaryID and summaryID = %s and resourceType = 'paper'""",(num))
+
+    paper_title = []
+    paper_url=[]
+    paper_abstract=[]  
+    if (result > 0):
+
+        rows = cur.fetchall()
+        
+        
+        paper_url=[]
+        paper_abstract=[]     
+        
+
+        for row in rows:
+
+            paper_url.append(row[0])
+            paper_title.append(row[1])
+            paper_abstract.append(row[2])
+
+    # print(url[0])
     return render_template('blogold.html',
     wordTitle = wordTitle,
     wordSummary=wordSummary,
@@ -155,7 +204,8 @@ def results():
     title = title,
     publishTime = publishTime,
     channel = channel,
-    length = 3
+    length = 3,
+    paper_title = paper_title
     )
 
 
@@ -196,7 +246,7 @@ def signup():
     result = {"username": name, "email": email, "password": password}
 
 
-    return jsonify(result), 200
+    return render_template('index.html')
     
 
 @app.route('/signin', methods = ['POST'])
@@ -218,8 +268,144 @@ def signin():
                 result = {'username': user[0], "email":user[1], "password":user[2]}
                 return jsonify(result), 200
 
-    return jsonify({'error':'No valid account found!'}), 200
+    return render_template('index.html')
    
+@app.route('/portalResult')
+def portalresult():
+
+    cur = mysql.connection.cursor()
+    result = cur.execute("""select summaryText, summaryTitle,  dayUploaded, monthUploaded, fileType
+    from summary""")
+    summaryText = []
+    summaryTitle = []
+    dayUploaded = []
+    monthUploaded = []
+    fileType= []
+    lengthPORTAL = 3*3
+    if (result > 0):
+
+        rows = cur.fetchall()
+        
+        for row in rows:
+
+            summaryText.append(row[0])
+            summaryTitle.append(row[1])
+            dayUploaded.append(row[2])
+            monthUploaded.append(row[3])
+            fileType.append("static/img/"+row[4]+".png")
+
+    return render_template('portal.html',
+    summaryText = summaryText,
+    summaryTitle = summaryTitle,
+    dayUploaded = dayUploaded,
+    monthUploaded = monthUploaded,
+    lengthPORTAL = lengthPORTAL,
+    fileType= fileType)
+
+
+
+
+
+
+
+@app.route('/resultsTemp', methods = ['GET', 'POST'])
+def resultTemp():
+
+
+    filePath = "nlp.pdf"
+    # if request.method == 'POST':
+    #   f = request.files['file']
+    #   fileType = f.filename.rsplit('.', 1)[1].lower()
+    pdf = PyPDF2.PdfFileReader(filePath)
+    num_pages= pdf.getNumPages()
+    text=''
+    for i in range(num_pages):
+        page=pdf.getPage(i)
+        text=text+page.extractText()
+    
+    # print(type(f))
+    text = preprocess(text)
+    print(num_pages)
+    print(text)
+
+    outputText = translate_text("en", text)
+    #   return 'file uploaded successfully'
+    titleGiven = query({
+                    "inputs":outputText, "parameters": {"do_sample": False ,"min_length":5 ,"max_length": 6},
+                })
+
+    
+
+
+    summaryGiven = query({
+                    "inputs":outputText, "parameters": {"do_sample": False ,"min_length":250 ,"max_length": 300},
+                })
+
+    wordSummary = {}
+    wordSummary['summary'] = summaryGiven[0]['summary_text']
+    wordTitle = {}
+    wordTitle['title'] = titleGiven[0]['summary_text']
+
+    res = youtube(titleGiven)
+    # size = len(res)
+
+    url = []
+    abstract = []
+    title = []
+    publishTime = []
+    channel = []
+
+    
+    for i in range(3):
+
+         url.append(res[i]['url'])
+         title.append(res[i]['title'])
+         abstract.append(res[i]['abstract'])
+         match = re.search(r'(\d+-\d+-\d+)',res[i]['publishtime'])
+         publishTime.append(match.group(1))
+         channel.append(res[i]['channelname'])
+    # return url[0]
+    num = "2"
+    cur = mysql.connection.cursor()
+    result = cur.execute("""select url, title, abstract
+    from summary AS S, resources AS R
+    where summaryID = rsummaryID and summaryID = %s and resourceType = 'paper'""",(num))
+
+    paper_title = []
+    paper_url=[]
+    paper_abstract=[]  
+    if (result > 0):
+
+        rows = cur.fetchall()
+        
+        
+        paper_url=[]
+        paper_abstract=[]     
+        
+
+        for row in rows:
+
+            paper_url.append(row[0])
+            paper_title.append(row[1])
+            paper_abstract.append(row[2])
+
+    # print(url[0])
+    return render_template('blogold.html',
+    wordTitle = wordTitle,
+    wordSummary=wordSummary,
+    url=url,
+    abstract = abstract,
+    title = title,
+    publishTime = publishTime,
+    channel = channel,
+    length = 3,
+    paper_title = paper_title
+    )
+
+
+
+
+
 
 
 

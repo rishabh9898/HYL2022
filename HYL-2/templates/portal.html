@@ -92,164 +92,37 @@ https://templatemo.com/tm-569-edu-meeting
                 </ul>
               </div>
             </div>
+            
             <div class="col-lg-12">
               <div class="row grid">
+                {% for i in range(lengthPORTAL) %}
+                <a href = "resultsTemp">
                 <div class="col-lg-4 templatemo-item-col all soon">
                   <div class="meeting-item">
                     <div class="thumb">
                       <div class="price">
                         <span style='font-size:21px;'>&#9733;</span>
                       </div>
-                      <a href="file:///C:\Users\hp\Desktop\Hackathons\HYL-2\static\img\pdf.png"><img src="static/img/pdf.png" alt=""></a>
+                      <img src={{fileType[i]}} alt="">
                     </div>
+
+                    
                     <div class="down-content">
                       <div class="date">
-                        <h6>Nov <span>12</span></h6>
+                        <h6>{{monthUploaded[i]}} <span>{{dayUploaded[i]}}</span></h6>
                       </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs. </p>
+                      <a href="meeting-details.html"><h4>{{summaryTitle[i]}}</h4></a>
+                      <p>{{summaryText[i]}}</p>
                     </div>
+                  
+
+
                   </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span style='font-size:21px;'>&#9733;</span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/docx.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>14</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all soon">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/mp3.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>16</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/pdf.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>18</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/mp4.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>22</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/mp3.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>24</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all imp att">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/mp3.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>27</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all soon imp">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/docx.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>28</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 templatemo-item-col all att soon">
-                  <div class="meeting-item">
-                    <div class="thumb">
-                      <div class="price">
-                        <span><i class="far fa-star"></i></span>
-                      </div>
-                      <a href="meeting-details.html"><img src="static/img/pdf.png" alt=""></a>
-                    </div>
-                    <div class="down-content">
-                      <div class="date">
-                        <h6>Nov <span>30</span></h6>
-                      </div>
-                      <a href="meeting-details.html"><h4>Natural Language Processing</h4></a>
-                      <p>The Python programing language provides a wide range of tools and libraries for attacking specific NLP tasks. Many of these are found in the Natural Language Toolkit, or NLTK, an open source collection of libraries, programs, and education resources for building NLP programs.</p>
-                    </div>
-                  </div>
-                </div>
+                </div></a>
+                {% endfor %}
               </div>
             </div>
-            
+          
           </div>
         </div>
       </div>
