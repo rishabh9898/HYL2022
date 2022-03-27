@@ -21,8 +21,8 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'hyl'
 app.config['MYSQL_PASSWORD'] = 'ensf'
 app.config['MYSQL_DB'] = 'hyl'
-API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-API_TOKEN = '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'
+API_URL = "" # deleted api key for protection
+API_TOKEN = '' # deleted api key for protection
 
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
@@ -73,8 +73,7 @@ def preprocess (text):
   return text
 
 def youtube(query):
-    api_key = "AIzaSyCbytQjVzusnCgZcJz8g2Dph99m07xoh_M"
-    # api_key = "AIzaSyDhs3vS_OwXut_S2AxXE1AOYid9Emd3iSo"
+    api_key = "" # deleted api key for protection
     youtube = build('youtube', 'v3', developerKey=api_key)
     type(youtube)
     req = youtube.search().list(q=query, part='snippet')
