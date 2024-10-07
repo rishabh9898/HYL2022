@@ -1,4 +1,4 @@
-# HYL2022
+#  ScholarED
 Hackathon HYL 2022
 
 ![MySQL](https://img.shields.io/badge/MySQL-%2320232a.svg?style=for-the-badge&logo=MySQL&logoColor=%2361DAFB)
